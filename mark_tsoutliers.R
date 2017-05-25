@@ -104,7 +104,9 @@ if(args$SLS) {tso_outlier_types <- c(tso_outlier_types, "SLS")}
 paste(tso_outlier_types, collapse = ", ")
 if(length(tso_outlier_types) == 0) {tso_outlier_types <- c("AO", "TC")}
 
+print("Identifying time series outliers...")
 mod <- tso(s, type = tso_outlier_types, cval = args$critical_value)
+print("... outliers identified.")
 out <- mod$outliers
 
 tso_df <- data.frame(pkey = pkey, series = s, tsoutlier = FALSE)
