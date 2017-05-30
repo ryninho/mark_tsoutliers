@@ -7,52 +7,52 @@ library(tsoutliers)
 
 parse_cmd_args <- function(parser) {
   parser <- ArgumentParser()
-  
-  parser$add_argument("--input_file",
+
+  parser$add_argument("-i", "--input_file",
     help = "Path of input .csv with time series")
-  
-  parser$add_argument("--primary_key_name",
+
+  parser$add_argument("-p", "--primary_key_name",
     help = "Column name of primary key. Overriden if --primary_key_index used")
-  
-  parser$add_argument("--primary_key_index", type = "integer",
+
+  parser$add_argument("-k", "--primary_key_index", type = "integer",
     help = "Column index (from 1) of primary key. Overrides --primary_key_name")
-  
-  parser$add_argument("--series_name",
+
+  parser$add_argument("-s", "--series_name",
     help = "Column name of series. Setting --series_index overrides this")
-  
-  parser$add_argument("--series_index", type = "integer",
+
+  parser$add_argument("-i", "--series_index", type = "integer",
     help = "Column index (from 1) of series. Overrides --series_name setting")
-  
-  parser$add_argument("--reverse_series",
+
+  parser$add_argument("-r", "--reverse_series",
     action = "store_true", default = FALSE,
     help = "Locate (and return) outliers in reverse time series order")
-  
-  parser$add_argument("--critical_value", type = "double",
+
+  parser$add_argument("-c", "--critical_value", type = "double",
     help = "Critical value. Otherwise set by tsoutliers based on sample size")
-  
+
   parser$add_argument("--AO",
     action = "store_true", default = FALSE,
     help = "Identify additive outliers. Overrides default of {AO, TC}")
- 
+
   parser$add_argument("--LS",
     action = "store_true", default = FALSE,
     help = "Identify level shifts. Overrides default of {AO, TC}")
- 
+
   parser$add_argument("--TC",
     action = "store_true", default = FALSE,
     help = "Identify temporary changes. Overrides default of {AO, TC}")
- 
+
   parser$add_argument("--IO",
     action = "store_true", default = FALSE,
     help = "Find innovative outliers. Overrides default of {AO, TC}")
- 
+
   parser$add_argument("--SLS",
     action = "store_true", default = FALSE,
     help = "Find seasonal level shifts. Overrides default of {AO, TC}")
- 
-  parser$add_argument("--output_file", default = "tsoutliers.csv",
+
+  parser$add_argument("-o", "--output_file", default = "tsoutliers.csv",
     help = "Path of output .csv")
-  
+
   parser$add_argument("--return_outlier_type",
     action = "store_true", default = FALSE,
     help = "Return outlier type [default %(default)s]")
@@ -64,14 +64,14 @@ parse_cmd_args <- function(parser) {
   parser$add_argument("--return_outlier_tstat",
     action = "store_true", default = FALSE,
     help = "Return outlier t-statistic [default %(default)s]")
-  
-  parser$add_argument("--generate_plot",
+
+  parser$add_argument("-p", "--generate_plot",
     action = "store_true", default = FALSE,
     help = "Generate plot of outliers [default %(default)s]")
-  
+
   parser$add_argument("--plot_path", default = "tsoutliers.png",
     help = "File path for outlier plot. Plot type is .png")
-  
+
   parser$parse_args()
 }
 
