@@ -105,8 +105,7 @@ paste(tso_outlier_types, collapse = ", ")
 if(length(tso_outlier_types) == 0) {tso_outlier_types <- c("AO", "TC")}
 
 print("Identifying time series outliers...")
-mod <- tso(s, type = tso_outlier_types, cval = args$critical_value,
-           remove.method="bottom-up") # remove.method set to circumvent tso bug
+mod <- tso(s, type = tso_outlier_types, cval = args$critical_value)
 print("... outliers identified.")
 out <- mod$outliers
 
