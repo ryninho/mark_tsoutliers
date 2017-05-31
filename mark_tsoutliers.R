@@ -20,7 +20,7 @@ parse_cmd_args <- function(parser) {
   parser$add_argument("-s", "--series_name",
     help = "Column name of series. Setting --series_index overrides this")
 
-  parser$add_argument("-i", "--series_index", type = "integer",
+  parser$add_argument("-x", "--series_index", type = "integer",
     help = "Column index (from 1) of series. Overrides --series_name setting")
 
   parser$add_argument("-r", "--reverse_series",
