@@ -11,13 +11,13 @@ parse_cmd_args <- function(parser) {
   parser$add_argument("-i", "--input_file",
     help = "Path of input .csv with time series")
 
-  parser$add_argument("-p", "--primary_key_name",
+  parser$add_argument("-k", "--primary_key_name",
     help = "Column name of primary key. Overriden if --primary_key_index used")
 
-  parser$add_argument("-k", "--primary_key_index", type = "integer",
+  parser$add_argument("-p", "--primary_key_index", type = "integer",
     help = "Column index (from 1) of primary key. Overrides --primary_key_name")
 
-  parser$add_argument("-s", "--series_name",
+  parser$add_argument("-v", "--series_name",
     help = "Column name of series. Setting --series_index overrides this")
 
   parser$add_argument("-x", "--series_index", type = "integer",
@@ -65,7 +65,7 @@ parse_cmd_args <- function(parser) {
     action = "store_true", default = FALSE,
     help = "Return outlier t-statistic [default %(default)s]")
 
-  parser$add_argument("-p", "--generate_plot",
+  parser$add_argument("-g", "--generate_plot",
     action = "store_true", default = FALSE,
     help = "Generate plot of outliers [default %(default)s]")
 
