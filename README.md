@@ -4,7 +4,7 @@ Identify time series outliers using tsoutliers without opening R. For your non-R
 
 ## Overview
 
-This script gives you access to some key functionality in the `tsoutliers` package via the command line. Note that it is designed for use with `tsoutliers` version '0.6.6' (May 27, 2017) and above. If you have an older version you may be at risk of running into [these](https://stats.stackexchange.com/questions/281921/na-causes-missed-outliers-with-tso-in-tsoutliers-package) [two](https://stackoverflow.com/questions/44191499/tso-function-in-tsoutliers-fails-with-message-about-xreg-colnames) bugs.
+This script gives you access to some key functionality in the `tsoutliers` package via the command line. Note that it is designed for use with `tsoutliers` version `0.6.6` (May 27, 2017) and above. If you have an older version you may be at risk of running into [these](https://stats.stackexchange.com/questions/281921/na-causes-missed-outliers-with-tso-in-tsoutliers-package) [two](https://stackoverflow.com/questions/44191499/tso-function-in-tsoutliers-fails-with-message-about-xreg-colnames) bugs.
 
 In particular, it takes a csv with a primary key and time series (ignoring other fields) and returns the primary key and series again with a TRUE/FALSE column indicating which observations are outliers. Optionally, you can return more information including the outlier types and even a plot of the series with outliers marked (examples below).
 
@@ -18,7 +18,7 @@ Open R and run this:
 install.packages('tsoutliers')
 ```
 
-**Important note**: If you already have the package, please be sure to upgrade to at least version '0.6.6'.
+**Important note**: If you already have the package, please be sure to upgrade to at least version `0.6.6`.
 
 ## Examples
 
