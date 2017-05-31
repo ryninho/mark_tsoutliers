@@ -124,7 +124,7 @@ for(ix in seq_along(out$ind)) {
     }
 }
 
-write.csv(tso_df, args$output_file, row.names = FALSE)
+write.csv(tso_df, args$output_file, row.names = FALSE, na = "")
 
 if(args$generate_plot) {
   png(args$plot_path)
